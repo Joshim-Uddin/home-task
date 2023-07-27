@@ -1,6 +1,8 @@
 // Task 1 : Create a function that takes a string as input and returns the reversed version of the string without using the built-in reverse() method. 
 
 // Example Input: "hello world" Example Output: "dlrow olleh"
+
+/*
 const arr = []
 const reverse = (str)=>{
     const newStr = str.split("");
@@ -11,22 +13,47 @@ const reverse = (str)=>{
     console.log(reversedStr)
 }
 reverse("hello world");
+*/
 
 // Task 2 : Create a function that takes an array of numbers as input and returns the sum of all positive numbers in the array. 
 
 // Example Input: [2, -5, 10, -3, 7] Example Output: 19
-// const sumOfPositiveNumbers =(array)=>{
-//     const positiveNumbers = array.filter(number=>number>0)
-//     const sum = positiveNumbers.reduce((sum, number)=>sum+number, 0)
-//     console.log(sum);
-// }
-// sumOfPositiveNumbers([2, -5, 10, -3, 7])
+
+/**
+const sumOfPositiveNumbers =(array)=>{
+    const positiveNumbers = array.filter(number=>number>0)
+    const sum = positiveNumbers.reduce((sum, number)=>sum+number, 0)
+    console.log(sum);
+}
+sumOfPositiveNumbers([2, -5, 10, -3, 7])
+*/
+
 // Task 3: Write a JavaScript program to find the most frequent element in an array and return it. 
 
 // Example Input: [3, 5, 2, 5, 3, 3, 1, 4, 5] Example Output: 3
 
-
-
+const frequentElement = (arr)=>{
+    let count = 0;
+    let maxFrequency = 1;
+    let item ;
+    for(let i=0; i<arr.length; i++){
+        for(let j=i; j<arr.length; j++){
+            if(arr[i]===arr[j]){
+                count++;
+                if(maxFrequency<count){
+                    maxFrequency = count;
+                    item = arr[i]
+                }
+                
+            }
+        }
+        count = 0;
+        
+    }
+    
+    console.log(`item is ${item}`);
+}
+frequentElement([3, 5, 2, 5, 3, 3, 1, 4, 5,5,5])
 // Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
 
 //  Example Input: ([1, 3, 6, 8, 11, 15], 9) Example Output: [1, 2] (numbers at indices 1 and 2: 3 + 6 = 9)
