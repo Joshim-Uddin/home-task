@@ -32,6 +32,7 @@ sumOfPositiveNumbers([2, -5, 10, -3, 7])
 
 // Example Input: [3, 5, 2, 5, 3, 3, 1, 4, 5] Example Output: 3
 
+/*
 const frequentElement = (arr)=>{
     let count = 0;
     let maxFrequency = 1;
@@ -51,18 +52,38 @@ const frequentElement = (arr)=>{
         
     }
     
-    console.log(`item is ${item}`);
+    return item;
 }
-frequentElement([3, 5, 2, 5, 3, 3, 1, 4, 5,5,5])
+console.log(frequentElement([3, 5, 2, 5, 3, 3, 1, 4, 5,5,5]))
+*/
 // Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
 
 //  Example Input: ([1, 3, 6, 8, 11, 15], 9) Example Output: [1, 2] (numbers at indices 1 and 2: 3 + 6 = 9)
-// const indices = (array, targetValue)=>{
-//     const index = array.reduce((previousValue, currentValue, currentIndex)=>previousValue+currentValue === targetValue?)
-// }
-
+const indices = (array, targetValue)=>{
+    for(let i=0; i<array.length; i++){
+        for(let j=i+1; j<array.length; j++){
+            if(array[i]+array[j]==targetValue){
+                return [i, j]
+            }
+        }
+    }
+}
+console.log(indices([1, 3, 6, 8, 11, 15], 9))
 //Task 5: Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
-
+const calculator = (num1, num2, operator)=>{
+switch(operator){
+    case '+': return num1 + num2;
+    break;
+    case '-': return num1 - num2;
+    break;
+    case '/': return num1 / num2;
+    break;
+    case '*': return num1 * num2;
+    break;
+    default: return;
+}
+}
+console.log(calculator(4,5,'*'))
 
 // Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
 
