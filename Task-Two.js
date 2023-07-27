@@ -1,0 +1,11 @@
+// Task 2 : Create a function that takes an array of numbers as input and returns the sum of all positive numbers in the array. 
+
+// Example Input: [2, -5, 10, -3, 7] Example Output: 19
+
+
+const sumOfPositiveNumbers =(array)=>{
+    const positiveNumbers = array.filter(number=>number>0)
+    const sum = positiveNumbers.reduce((sum, number)=>sum+number, 0)
+    console.log(sum);
+}
+sumOfPositiveNumbers([2, -5, 10, -3, 7])
