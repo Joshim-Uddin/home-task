@@ -87,8 +87,19 @@ console.log(calculator(4,5,'*'))
 
 // Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
 
+const randomPassword=()=>{
+    const password = Math.floor(Math.random());
+    console.log(password)
+}
+randomPassword()
 
 // Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
 
 
 // Task 8: Implement a JavaScript function to find the second smallest element in an array of numbers. The function should return the second smallest number.
+const secondSmallestNumber =(array)=>{
+    const min = array.sort((a, b) => a-b)
+   const secondSmallNumber = min[1]
+   return secondSmallNumber;
+}
+console.log(secondSmallestNumber([70,3,45,32,900, 500, 73,88]))
